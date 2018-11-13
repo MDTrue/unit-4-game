@@ -4,12 +4,15 @@ var buttonRandomOne
 var buttonRandomTwo
 var buttonRandomThree
 var buttonRandomFour
+var buttonRandomArr =[]
 var playerScore = 0
 var numberWins = 0
 var numberLoses = 0
 var userMessage = "good luck"
 
 //generate random value for target score  between 19- 120
+//generate random values for crystal buttons  between 1-12   stretch = one should always be 1 so that the game is winable
+
 function genGameRandom() {
     gameRandom = Math.floor((Math.random() * 100) + 19);
     playerScore = 0
@@ -28,41 +31,42 @@ function genGameRandom() {
 
 
 
-// document.getElementById("random-number").innerHTML = gameRandom;
-// document.getElementById("message").innerHTML = userMessage;
+//run the function
 
- genGameRandom()
-//generate random values for crystal buttons  between 1-12   stretch = one should always be 1 so that the game is winable
+genGameRandom()
+
 
 // on click function for buttons and pass into user total
-document.getElementById("red").addEventListener("click", function(){
-   playerScore = playerScore + buttonRandomOne;
+$("#red").on("click", function () {
+    // document.getElementById("red").addEventListener("click", function(){---how to write it in javascript
+    playerScore = playerScore + buttonRandomOne;
     console.log(playerScore)
+    //  $("#user-total").html(playerscore);
     document.getElementById("user-total").innerHTML = playerScore;
-   getScore();
-    // checkScore(playerScore);
+    getScore();
+
 })
-document.getElementById("blue").addEventListener("click", function(){
+$("#blue").on("click", function () {
     playerScore = playerScore + buttonRandomTwo;
     console.log(playerScore)
     document.getElementById("user-total").innerHTML = playerScore;
     getScore();
-    // checkScore(playerScore);
+
 })
-document.getElementById("yellow").addEventListener("click", function(){
+$("#yellow").on("click", function () {
     playerScore = playerScore + buttonRandomThree;
     console.log(playerScore)
     document.getElementById("user-total").innerHTML = playerScore;
     getScore();
-    // checkScore(playerScore);
+
 })
-document.getElementById("green").addEventListener("click", function(){
+$("#green").on("click", function () {
     playerScore = playerScore + buttonRandomFour;
     console.log(playerScore)
     document.getElementById("user-total").innerHTML = playerScore;
     getScore();
-    // checkScore(playerScore);
-    
+    ;
+
 })
 
 document.getElementById("user-total").innerHTML = playerScore;
@@ -70,29 +74,27 @@ document.getElementById("user-total").innerHTML = playerScore;
 //     console.log("this is the player Score " +playerScore)
 //     console.log("this is the target score "+gameRandom)
 
-//append to win or loss column
-function getScore(){
-//     var playerScoreInt = parseInt(playerScore);
-//     var gameRandomInt = parseInt(gameRandom)
-// 
- 
-    if (playerScore === gameRandom){
-//     // alert("you win")
-    console.log("you win")
-    numberWins++;
-    userMessage = "you win";
-    document.getElementById("message").innerHTML = userMessage;
-    document.getElementById("win-total").innerHTML = numberWins;
-    genGameRandom()
 
-}
-else if (playerScore > gameRandom){
-    numberLoses++;
-    userMessage = "you lose";
-    document.getElementById("message").innerHTML = userMessage;
-    document.getElementById("loss-total").innerHTML = numberLoses;
-    genGameRandom()
-}
+function getScore() {
+
+
+    if (playerScore === gameRandom) {
+        //     // alert("you win")
+        console.log("you win")
+        numberWins++;
+        userMessage = "you win";
+        document.getElementById("message").innerHTML = userMessage;
+        document.getElementById("win-total").innerHTML = numberWins;
+        genGameRandom()
+
+    }
+    else if (playerScore > gameRandom) {
+        numberLoses++;
+        userMessage = "you lose";
+        document.getElementById("message").innerHTML = userMessage;
+        document.getElementById("loss-total").innerHTML = numberLoses;
+        genGameRandom()
+    }
 }
 
 // function reset(){
@@ -108,7 +110,7 @@ else if (playerScore > gameRandom){
 //     lossMessage = "you lose";
 //     document.getElementById("message").innerHTML = lossMessage;
 //     document.getElementById("loss-total").innerHTML = numberLoses;
-    
+
 // }
 
 // else if (curPlayerScore === gameRandom){
@@ -119,7 +121,7 @@ else if (playerScore > gameRandom){
 //     userMessage = "you win";
 //     document.getElementById("message").innerHTML = userMessage;
 //     document.getElementById("win-total").innerHTML = numberWins;
-   
+
 
 // } 
 
