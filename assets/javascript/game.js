@@ -10,6 +10,7 @@ var numberWins = 0
 var numberLoses = 0
 var userMessage = "good luck"
 
+ 
 //generate random value for target score  between 19- 120
 //generate random values for crystal buttons  between 1-12   stretch = one should always be 1 so that the game is winable
 
@@ -19,13 +20,35 @@ function genGameRandom() {
     document.getElementById("random-number").innerHTML = gameRandom;
     document.getElementById("user-total").innerHTML = playerScore;
     document.getElementById("message").innerHTML = userMessage;
-    buttonRandomOne = Math.floor(Math.random() * (12) + 1);
+    var nums = ["1","2","3","4","5","6","7","8","9","10","11","12"]
+    ranNums =[]
+    j = 0
+    i = nums.length
+    while (i--){
+        j = Math.floor(Math.random() * (i+1));
+        ranNums.push(nums[j]);
+        nums.splice(j,1);
+    }
+ console.log(ranNums)
+ buttonRandomOne = parseInt(ranNums[0])
+ buttonRandomTwo = parseInt(ranNums[1])
+ buttonRandomThree = parseInt(ranNums[2])
+ buttonRandomFour = parseInt(ranNums[3])
+    // function getRandomNum(num) {
+    //     return Math.floor(Math.random(num) * (12) + 1);
+    // }
+
+    // getRandomNum(buttonRandomOne)
+    // getRandomNum(buttonRandomTwo)
+    // getRandomNum(buttonRandomThree)
+    // getRandomNum(buttonRandomFour)
+    // buttonRandomOne = Math.floor(Math.random() * (12) + 1);
     console.log(buttonRandomOne)
-    buttonRandomTwo = Math.floor(Math.random() * (12) + 1);
+    // buttonRandomTwo = Math.floor(Math.random() * (12) + 1);
     console.log(buttonRandomTwo)
-    buttonRandomThree = Math.floor(Math.random() * (12) + 1);
+    // buttonRandomThree = Math.floor(Math.random() * (12) + 1);
     console.log(buttonRandomThree)
-    buttonRandomFour = Math.floor(Math.random() * (12) + 1);
+    // // buttonRandomFour = Math.floor(Math.random() * (12) + 1);
     console.log(buttonRandomFour)
 }
 
@@ -41,29 +64,29 @@ $("#red").on("click", function () {
     // document.getElementById("red").addEventListener("click", function(){---how to write it in javascript
     playerScore = playerScore + buttonRandomOne;
     console.log(playerScore)
-    //  $("#user-total").html(playerscore);
-    document.getElementById("user-total").innerHTML = playerScore;
+     $("#user-total").html(playerScore);
+    // document.getElementById("user-total").innerHTML = playerScore;-----javascript with no jquery
     getScore();
 
 })
 $("#blue").on("click", function () {
     playerScore = playerScore + buttonRandomTwo;
     console.log(playerScore)
-    document.getElementById("user-total").innerHTML = playerScore;
+    $("#user-total").html(playerScore);
     getScore();
 
 })
 $("#yellow").on("click", function () {
     playerScore = playerScore + buttonRandomThree;
     console.log(playerScore)
-    document.getElementById("user-total").innerHTML = playerScore;
+    $("#user-total").html(playerScore);
     getScore();
 
 })
 $("#green").on("click", function () {
     playerScore = playerScore + buttonRandomFour;
     console.log(playerScore)
-    document.getElementById("user-total").innerHTML = playerScore;
+    $("#user-total").html(playerScore);
     getScore();
     ;
 
