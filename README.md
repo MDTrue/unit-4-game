@@ -1,10 +1,12 @@
 
-crystal choice game (ph)
+#Postcards from Kiev 
 =======
 
 ## unit-4-game
 
-points from buttons
+A simple themed javascript game.
+
+![Game Image](assets\images\postcardKiev.jpg)
 
 ---
 
@@ -16,9 +18,5 @@ Made with:
   * javascript
   * jquery
 
-Numbered list:
 
-  1. wash
-  2. rinse
-  3. repeat
 

@@ -4,13 +4,13 @@ var buttonRandomOne
 var buttonRandomTwo
 var buttonRandomThree
 var buttonRandomFour
-var buttonRandomArr =[]
+var buttonRandomArr = []
 var playerScore = 0
 var numberWins = 0
 var numberLoses = 0
 var userMessage = "good luck"
 
- 
+
 //generate random value for target score  between 19- 120
 //generate random values for crystal buttons  between 1-12   stretch = one should always be 1 so that the game is winable
 
@@ -20,36 +20,30 @@ function genGameRandom() {
     document.getElementById("random-number").innerHTML = gameRandom;
     document.getElementById("user-total").innerHTML = playerScore;
     document.getElementById("message").innerHTML = userMessage;
-    var nums = ["1","2","3","4","5","6","7","8","9","10","11","12"]
-    ranNums =[]
+    var nums = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+    ranNums = []
     j = 0
     i = nums.length
-    while (i--){
-        j = Math.floor(Math.random() * (i+1));
+    while (i--) {
+        j = Math.floor(Math.random() * (i + 1));
         ranNums.push(nums[j]);
-        nums.splice(j,1);
+        nums.splice(j, 1);
     }
- console.log(ranNums)
- buttonRandomOne = parseInt(ranNums[0])
- buttonRandomTwo = parseInt(ranNums[1])
- buttonRandomThree = parseInt(ranNums[2])
- buttonRandomFour = parseInt(ranNums[3])
+    console.log(ranNums)
+    buttonRandomOne = parseInt(ranNums[0])
+    buttonRandomTwo = parseInt(ranNums[1])
+    buttonRandomThree = parseInt(ranNums[2])
+    buttonRandomFour = parseInt(ranNums[3])
     // function getRandomNum(num) {
-    //     return Math.floor(Math.random(num) * (12) + 1);
+        // getRandomNum(buttonRandomOne) ---my original method but it allowed duplicate values
+        // buttonRandomOne = Math.floor(Math.random() * (12) + 1);
     // }
 
-    // getRandomNum(buttonRandomOne)
-    // getRandomNum(buttonRandomTwo)
-    // getRandomNum(buttonRandomThree)
-    // getRandomNum(buttonRandomFour)
-    // buttonRandomOne = Math.floor(Math.random() * (12) + 1);
-    console.log(buttonRandomOne)
-    // buttonRandomTwo = Math.floor(Math.random() * (12) + 1);
-    console.log(buttonRandomTwo)
-    // buttonRandomThree = Math.floor(Math.random() * (12) + 1);
+    console.log(buttonRandomOne) 
+    console.log(buttonRandomTwo)  
     console.log(buttonRandomThree)
-    // // buttonRandomFour = Math.floor(Math.random() * (12) + 1);
     console.log(buttonRandomFour)
+    //these are checks
 }
 
 
@@ -64,7 +58,7 @@ $("#red").on("click", function () {
     // document.getElementById("red").addEventListener("click", function(){---how to write it in javascript
     playerScore = playerScore + buttonRandomOne;
     console.log(playerScore)
-     $("#user-total").html(playerScore);
+    $("#user-total").html(playerScore);
     // document.getElementById("user-total").innerHTML = playerScore;-----javascript with no jquery
     getScore();
 
@@ -93,7 +87,7 @@ $("#green").on("click", function () {
 })
 
 document.getElementById("user-total").innerHTML = playerScore;
-// function checkScore(curPlayerScore){
+// checks
 //     console.log("this is the player Score " +playerScore)
 //     console.log("this is the target score "+gameRandom)
 
@@ -119,7 +113,8 @@ function getScore() {
         genGameRandom()
     }
 }
-
+//this is code added by my tutor that I wound up not using, my own code was much cleaner
+//but I left it in as reference
 // function reset(){
 //     gameRandom = Math.floor((Math.random() * 100) + 19);
 //     document.getElementById("random-number").innerHTML = gameRandom;
