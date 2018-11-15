@@ -20,7 +20,7 @@ body {
     
 }
 #title {
-    padding: 70px 0px 60px 0px;
+    padding: 20px 0px 65px 0px;
     /* border-style: solid;
     border-width: 4px; */
 
@@ -28,9 +28,10 @@ body {
 h1  {
     text-align: center;
     font-family: 'Nothing You Could Do', cursive;
-    font-size: 60px;
+    font-style: bold;
+    font-size: 75px;
     /* text-shadow: 2px 2px 8px rgb(30, 32, 30); */
-    color:gold;
+    color:#C94B47;
 
     
 }
@@ -38,13 +39,14 @@ p {
     font-family: 'Homemade Apple', cursive;
     font-size: 22px;
     font-style: bold;
-    padding: 10px 10px 10px 100px;
+    line-height: 1.2;
+    padding: 10px 50px 10px 75px;
     /* border-style: solid;
     border-width: 4px; */
 }
 #red {
    
-    height: 200px;
+    height: 150px;
     width: auto;
     margin: 0px 0px 0px 50px;
     box-shadow: 10px 10px 5px black;
@@ -52,21 +54,21 @@ p {
   }
  #blue {
    
-    height: 200px;
+    height: 150px;
     width: auto;
     border: none;
     box-shadow: 10px 10px 5px black;
   }
   #yellow {
    
-    height: 200px;
+    height: 150px;
     width: auto;
     border: none;
     box-shadow: 10px 10px 5px black;
   }
   #green {
    
-    height: 200px;
+    height: 150px;
     width: auto;
     border: none;
     box-shadow: 10px 10px 5px black;
@@ -79,14 +81,14 @@ h2 {
 #postageTotal {
     /* float: right; */
     display: inline-block;
-    padding:  50px 100px 50px 100px;
+    padding:  50px 125px 20px 120px;
     /* border-style: solid;
     border-width: 4px; */
 }
 #postagePrice {
     /* float: left; */
     display: inline-block;
-    padding:  50px 100px 50px 100px;
+    padding:  50px 100px 20px 100px;
     /* border-style: solid;
     border-width: 4px; */
 }
@@ -96,7 +98,19 @@ h2 {
 }
 #messagePass {
     text-align: center;
+    padding: 20px 0px 30px 0px;
 }
+#lastCol {
+    align-content: center;
+
+}
+/* }
+.winRow{
+    border: 25px 25px 50px 25px;
+}
+.lossRow{
+    border: 25px 25px 50px 25px;
+} */
 /* font-family: 'Homemade Apple', cursive;
 font-family: 'Russo One', sans-serif;
 font-family: 'Nothing You Could Do', cursive; */
